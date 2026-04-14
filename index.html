@@ -211,30 +211,25 @@
 
         function logToGoogleSheets() {
     const name = document.getElementById('player-name').value;
-    const today = new Date().toISOString().split('T')[0];
     const statusBox = document.getElementById('tracker-status');
     
-    // Use FormData instead of URLSearchParams for better reliability
-    const body = new FormData();
-    body.append(ENTRIES.name, name);
-    body.append(ENTRIES.level, currentLevel);
-    body.append(ENTRIES.status, "Completed");
-    body.append(ENTRIES.date, today);
-    body.append(ENTRIES.rating, "5");
-    body.append(ENTRIES.comments, "App Auto-Submit");
+    // We create a simple URL string to avoid any FormData overhead
+    const nameId = "entry.1684950122";
+    const levelId = "entry.2055289492";
+    const statusId = "entry.2133802806";
 
-    fetch(FORM_BASE_URL, {
+    const testUrl = `${FORM_BASE_URL}?${nameId}=${encodeURIComponent(name)}&${levelId}=${encodeURIComponent(currentLevel)}&${statusId}=${encodeURIComponent("Completed")}`;
+
+    fetch(testUrl, {
         method: "POST",
-        mode: "no-cors",
-        body: body // Sending data in the body is the "proper" way for Google Forms
+        mode: "no-cors"
     })
     .then(() => {
         statusBox.innerHTML = `<span class="text-green-400">✅ Saved!</span>`;
-        console.log("Stats successfully sent for " + name);
+        console.log("Stats sent for " + name);
     })
     .catch(err => {
-        statusBox.innerText = "❌ Sync Error";
-        console.error("Submission failed:", err);
+        console.error("Fetch error:", err);
     });
 }
 
