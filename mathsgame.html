@@ -173,10 +173,7 @@
                                 onfocus="this.dataset.prev = this.value" 
                                 onchange="this.dataset.prev = this.value" 
                                 class="bg-transparent text-lg font-semibold text-white focus:outline-none cursor-pointer">
-                            <option value="Reyansh" class="bg-slate-800">Reyansh</option>
-                            <option value="Saanvi" class="bg-slate-800">Saanvi</option>
-                            <option value="Rakesh" class="bg-slate-800">Rakesh</option>
-                            <option value="Neha" class="bg-slate-800">Neha</option>
+                            <option value="default" class="bg-slate-800">Default</option>
                         </select>
                         <button onclick="addNewPlayer()" class="w-8 h-8 rounded-lg bg-brand-500 hover:bg-brand-400 flex items-center justify-center text-xl font-bold transition-all shadow-lg active:scale-90" title="Add New Player">+</button>
                     </div>
@@ -271,7 +268,7 @@
         const GRID_SIZE = 13;
 
         function addNewPlayer() {
-            const name = prompt("Enter new player name:");
+            const name = prompt("Enter a new player('s) name.");
             if (name && name.trim()) {
                 const cleanName = name.trim();
                 const select = document.getElementById('player-name');
