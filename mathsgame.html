@@ -317,13 +317,13 @@
                     const note = row[7] || ""; // Corrected index for Notes
 
                     tr.innerHTML = `
-                        <td class="px-4 py-5 rounded-l-2xl text-slate-500 font-mono text-xs">${String(row[0]).split(' ')[0]}</td>
-                        <td class="px-4 py-5 font-bold text-white text-lg">${name}</td>
+                        <td class="px-4 py-5 rounded-l-2xl text-slate-300 font-mono text-sm">${row[0]}</td>
+                        <td class="px-4 py-5 font-black text-white text-xl">${name}</td>
                         <td class="px-4 py-5">
-                            <span class="px-3 py-1.5 rounded-lg bg-brand-500/20 text-brand-400 text-xs font-black uppercase tracking-wider">${level}</span>
+                            <span class="px-4 py-2 rounded-xl bg-brand-500/20 text-brand-400 text-sm font-black uppercase tracking-widest">${level}</span>
                         </td>
-                        <td class="px-4 py-5 text-center text-emerald-400 font-black text-xl">${steps}</td>
-                        <td class="px-4 py-5 rounded-r-2xl text-slate-400 text-sm italic font-medium">${note}</td>
+                        <td class="px-4 py-5 text-center text-emerald-400 font-black text-2xl">${steps}</td>
+                        <td class="px-4 py-5 rounded-r-2xl text-slate-300 text-base italic font-medium">${note}</td>
                     `;
                     body.appendChild(tr);
                 });
