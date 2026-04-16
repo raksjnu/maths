@@ -301,8 +301,8 @@
             const rows = response.table.rows;
             
             // Map rows (V is value property in GViz JSON)
-            const data = rows.map(r => r.c.map(cell => {
-                if (!cell) return null;
+            const data = rows.map(r => r.c.map( => {
+                if (!) return null;
                 return (cell.v !== null && cell.v !== undefined) ? (cell.f || cell.v) : null;
             }));
             
@@ -557,7 +557,7 @@
             statusDot.className = "w-2 h-2 rounded-full bg-amber-500 animate-spin";
 
             const now = new Date();
-            const defaults = ['Reyansh', 'Saanvi', 'Rakesh', 'Neha'];
+            const defaults = ['Default'];
             let finalName = name;
             let otherNameValue = "";
             if (!defaults.includes(name)) {
