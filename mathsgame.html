@@ -336,7 +336,7 @@
             // 2. Sync Players to Dropdown
             const select = document.getElementById('player-name');
             if (select) {
-                const names = new Set(['Reyansh', 'Saanvi', 'Rakesh', 'Neha']); // Always start with defaults
+                const names = new Set(['Default']); // Always start with defaults
                 
                 // Get local custom players too
                 const localCustom = JSON.parse(localStorage.getItem('math_players') || '[]');
@@ -409,7 +409,7 @@
 
         function generateLinkedPath(level) {
             let ops = level === 'Easy' ? ['+', '-'] : ['+', '-', 'x', '/'];
-            let maxSteps = level === 'Easy' ? 8 : level === 'Medium' ? 24 : 48;
+            let maxSteps = level === 'Easy' ? 8 : level === 'Medium' ? 24 : 96;
             currentSteps = 0;
             let hidden = [], cx = 6, cy = 6; // Start centered in 13x13
             let occupied = new Set();
