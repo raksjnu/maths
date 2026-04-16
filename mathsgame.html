@@ -186,7 +186,12 @@
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 mb-10">
-            <a href="index.html"><button class="group relative px-6 py-3 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 overflow-hidden">Exit Large UI Mode</button></a>
+            <a href="index.html">
+                <button class="group relative px-6 py-3 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 overflow-hidden">
+                <div class="absolute inset-0 bg-purple-600 opacity-90 transition-all group-hover:bg-emerald-500"></div>
+                <span class="relative flex items-center gap-2">Exit Large UI Mode</span>
+            </button>
+            </a>
             <button onclick="initGame('Easy')" class="group relative px-6 py-3 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 overflow-hidden">
                 <div class="absolute inset-0 bg-emerald-600 opacity-90 transition-all group-hover:bg-emerald-500"></div>
                 <span class="relative flex items-center gap-2">🌱 Easy</span>
